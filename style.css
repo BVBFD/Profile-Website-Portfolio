@@ -1,0 +1,438 @@
+/* Global */
+:root {
+  /* color */
+  --color-white: #ffffff;
+  --color-light-white: #eeeeee;
+  --color-dark-white: #bdbdbd;
+  --color-black: #4d4d4d;
+  --color-dark-grey: #4d4d4d;
+  --color-grey: #616161;
+  --color-light-grey: #7c7979;
+  --color-light-yellow: #fff7d1;
+  --color-orange: #feb546;
+  --color-dark-orange: #ff8c00;
+  --color-yellow: #ffde59;
+  --color-light-blue: #73aace;
+  --color-pink: #fe918d;
+  --color-dark-pink: #ff6863;
+  --color-grey-yellow: #fbeac4;
+  --color-blue: blue;
+
+  /* font size */
+  --font-large: 48px;
+  --font-less-large: 35px;
+  --font-medium: 28px;
+  --font-regular: 22px;
+  --font-small: 18px;
+  --font-micro: 14px;
+
+  /* font weight */
+  --weight-bold: 700;
+  --weight-semi-bold: 600;
+  --weight-regular: 400;
+
+  /* size */
+  --size-border-radius: 4px;
+
+  /* animation */
+  --animation-duration: 300ms;
+}
+
+/* universal tags */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 230px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  list-style: none;
+  font-size: var(--font-regular);
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+section {
+  padding: 1vh 1vw;
+}
+
+footer {
+  padding: 1vh 1vw;
+}
+
+.resume article {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 3vh 3vw;
+}
+
+/* typography */
+h1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+}
+
+.rect {
+  color: var(--color-blue);
+  margin: 0 10px;
+  font-size: var(--font-less-large);
+}
+
+h2 {
+  font-size: var(--font-medium);
+  margin: 2vh 0;
+}
+
+/* nav-bar: header */
+.nav-bar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-yellow);
+  color: var(--color-white);
+  font-size: var(--font-regular);
+  font-weight: var(--weight-bold);
+  z-index: 999;
+}
+
+.nav-bar_logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nav-bar_logo img {
+  width: 60px;
+  height: 60px;
+  border-radius: 0;
+  background-color: transparent;
+  margin: 5px;
+}
+
+.nav-bar_contents span {
+  margin: 5px;
+}
+
+/* About me */
+/* background */
+.about-me {
+  display: flex;
+  flex-direction: row;
+}
+
+.about-me_bg1 {
+  width: 40%;
+  height: 80vh;
+  background-color: var(--color-grey-yellow);
+}
+
+.about-me_bg2 {
+  width: 60%;
+  height: 80vh;
+  background-color: var(--color-light-yellow);
+}
+
+/* About me profile article */
+/* about-me_profile_part1 */
+.about-me_profile {
+  position: absolute;
+  top: 15vh;
+  left: 5vw;
+  display: flex;
+  flex-direction: row;
+  z-index: 1;
+}
+
+.about-me_profile_part1 {
+  background-color: var(--color-light-yellow);
+  flex-basis: 40%;
+  padding: 15px;
+}
+
+.about-me_profile_part2 {
+  background-color: var(--color-white);
+  flex-basis: 60%;
+  padding: 15px;
+}
+
+.about-me_profile_part1_content1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-me_profile_part1_content1 img {
+  margin-bottom: 10px;
+}
+
+.about-me_profile_part1_content1 :nth-child(2) {
+  font-size: var(--font-medium);
+  font-weight: var(--weight-bold);
+}
+
+.about-me_profile_part1_content1 :nth-child(4) {
+  font-size: var(--font-small);
+  font-weight: var(--weight-bold);
+  margin-bottom: 10px;
+}
+
+.about-me_profile_part1_content1_smallBar {
+  width: 3vw;
+  height: 0.4vh;
+  background-color: var(--color-yellow);
+  margin: 10px;
+  margin-bottom: 5px;
+}
+
+.about-me_profile_part1_logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.about-me_profile_part1_logo a {
+  font-size: var(--font-less-large);
+  margin: 10px;
+}
+
+/* About me profile article */
+/* about-me_profile_part2 */
+.about-me_profile_part2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-me_profile_part2_header {
+  font-size: var(--font-large);
+  font-weight: var(--weight-bold);
+}
+
+.about-me_profile_part2_job {
+  font-size: var(--font-medium);
+  font-weight: var(--weight-bold);
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.about-me_profile_part2_href {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.about-me_profile_part2_href button {
+  height: 8vh;
+  font-size: var(--font-regular);
+  font-weight: var(--weight-semi-bold);
+  background-color: var(--color-yellow);
+  color: var(--color-white);
+  border-radius: 50%;
+}
+
+.about-me_profile_part2 p {
+  font-size: var(--font-small);
+  font-weight: var(--weight-semi-bold);
+  margin: 10px;
+}
+
+/* resume part */
+.resume {
+  display: flex;
+  flex-direction: column;
+}
+
+h1 span {
+  font-size: var(--font-large);
+  font-weight: var(--weight-bold);
+}
+
+.resume_skills_download {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 25px;
+}
+
+.resume_skills_download button {
+  height: 5vh;
+  font-size: var(--font-regular);
+  font-weight: var(--weight-semi-bold);
+  background-color: var(--color-blue);
+  color: var(--color-white);
+  border-radius: var(--size-border-radius);
+}
+
+.resume article i {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 80px;
+  margin-bottom: 25px;
+  border: 1px solid var(--color-orange);
+  color: var(--color-orange);
+}
+
+.resume article i:hover {
+  transform: rotate(-45deg) scale(1.1);
+  color: var(--color-dark-orange);
+  border: 1px solid var(--color-dark-orange);
+  transition: all var(--animation-duration) linear;
+}
+
+.resume-logo-box div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.resume-logo-box div span {
+  font-size: var(--font-medium);
+  color: var(--color-black);
+  font-weight: var(--weight-bold);
+  margin-bottom: 20px;
+}
+
+.resume-logo-box div p {
+  margin: 0;
+  font-size: var(--font-small);
+}
+
+/* resume skills, tools, ets part */
+.skills-tools-etc {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* align-items: center; */
+  background-color: var(--color-light-yellow);
+  /* flex 너무 남발하지 말자 (생각하고 쓰자) */
+
+  /* 같은 상자안에서 2개의 나열된 상자 높이가 안 맞을때 생각해보기 */
+  /* align-items 세로축 기준으로 정렬하면 세로축 기준으로 중앙 */
+  /* 정렬을 하기때문에 위, 아래 빈공간이 생길 수 밖에 없다. */
+  /* 그래서 맞지 않는 것임. (생각하고 쓰자) */
+}
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-dark-grey);
+  flex-basis: 60%;
+  color: var(--color-white);
+}
+
+.skills-name-per {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: var(--font-regular);
+}
+
+.tools-etc {
+  flex-basis: 40%;
+  color: var(--color-white);
+  text-align: center;
+}
+
+.tools-etc div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.tools-etc-tools-box {
+  background-color: var(--color-grey);
+  width: 100%;
+  padding: 2vh 0;
+}
+
+.tools-etc-etc-box {
+  background-color: var(--color-light-grey);
+  width: 100%;
+  padding: 2vh 0;
+}
+
+.tools-etc-tools-box ul {
+  padding: 0 20px;
+}
+
+.tools-etc-etc-box ul {
+  padding: 0 20px;
+}
+
+.skills-bar {
+  width: 50vw;
+  height: 4px;
+  background-color: var(--color-dark-white);
+  margin-bottom: 40px;
+}
+
+.skills-value-for-html {
+  width: 99%;
+  height: 4px;
+  background-color: var(--color-orange);
+}
+
+.skills-value-for-css {
+  width: 90%;
+  height: 4px;
+  background-color: var(--color-orange);
+}
+
+.skills-value-for-js {
+  width: 90%;
+  height: 4px;
+  background-color: var(--color-orange);
+}
+
+.skills-value-for-ts {
+  width: 80%;
+  height: 4px;
+  background-color: var(--color-orange);
+}
+
+.skills-value-for-react {
+  width: 88%;
+  height: 4px;
+  background-color: var(--color-orange);
+}
+
+.skills-value-for-nodejs {
+  width: 77%;
+  height: 4px;
+  background-color: var(--color-orange);
+}
