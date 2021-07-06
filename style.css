@@ -73,7 +73,7 @@ button {
 }
 
 section {
-  padding: 1vh 1vw;
+  margin: 1vh 1vw;
 }
 
 footer {
@@ -84,7 +84,12 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 3vh 3vw;
+  padding: 15vh 3vw;
+}
+
+.experience-education article {
+  display: flex;
+  flex-direction: row;
 }
 
 /* typography */
@@ -105,6 +110,13 @@ h1 {
 h2 {
   font-size: var(--font-medium);
   margin: 2vh 0;
+  padding-left: 25px;
+}
+
+p {
+  display: inline-block;
+  /* inline 단위의 태그는 박스 안의 콘텐츠 크기만큼만 감싸주기 때문에 */
+  /* inline-block으로 block 단위 태그로 변환해주면 보기 좋아짐 */
 }
 
 /* nav-bar: header */
@@ -278,7 +290,7 @@ h1 span {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0 25px;
+  padding-right: 25px;
 }
 
 .resume_skills_download button {
@@ -435,4 +447,27 @@ h1 span {
   width: 77%;
   height: 4px;
   background-color: var(--color-orange);
+}
+
+/* experience and education part */
+.experience-education {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-light-white);
+  padding: 5vh 0;
+}
+
+.experience-part {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 1px solid var(--color-light-white);
+  margin: auto;
+}
+
+.experience-part div {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-white);
+  padding: 0 3vw;
 }
