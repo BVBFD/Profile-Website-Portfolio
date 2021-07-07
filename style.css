@@ -514,3 +514,23 @@ h1 span {
   width: 15vw;
   height: 25vh;
 }
+
+/* testimonials part */
+.testimonials {
+  background-color: var(--color-light-white);
+  padding: 5vh 5vw;
+}
+
+.testimonials-part {
+  display: flex;
+  flex-direction: row;
+  margin: 5vh;
+}
+
+.testimonials-part p {
+  background-color: var(--color-white);
+  margin: 2vh;
+  padding: 2vh 2vw;
+  font-size: var(--font-small);
+  font-weight: var(--weight-semi-bold);
+}
