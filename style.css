@@ -110,7 +110,6 @@ h1 {
 h2 {
   font-size: var(--font-medium);
   margin: 2vh 0;
-  padding-left: 25px;
 }
 
 p {
@@ -150,6 +149,13 @@ p {
 
 .nav-bar_contents span {
   margin: 5px;
+}
+
+.bars-toggle-btn {
+  display: none;
+  font-size: var(--font-medium);
+  background-color: var(--color-yellow);
+  color: var(--color-white);
 }
 
 /* About me */
@@ -500,8 +506,8 @@ h1 span {
 }
 
 .prj-pic {
-  width: 20vw;
-  height: 35vh;
+  width: 280px;
+  height: 250px;
   background-color: var(--color-light-white);
   padding: 10px 0;
   border: 1px solid var(--color-white);
@@ -511,8 +517,8 @@ h1 span {
 }
 
 .prj-pic img {
-  width: 15vw;
-  height: 25vh;
+  width: 230px;
+  height: 200px;
 }
 
 /* testimonials part */
@@ -594,4 +600,96 @@ h1 span {
 
 .profile-footer-info {
   margin-top: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .bars-toggle-btn {
+    display: block;
+  }
+
+  .nav-bar_logo span {
+    display: none;
+  }
+
+  .nav-bar_contents {
+    display: none;
+  }
+
+  .nav-bar_contents.open {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    background-color: var(--color-yellow);
+    position: absolute;
+    top: 70px;
+  }
+
+  .about-me {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about-me_profile {
+    position: static;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about-me_bg1 {
+    display: none;
+  }
+
+  .about-me_bg2 {
+    display: none;
+  }
+
+  .resume article {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .resume-logo-box div {
+    margin-bottom: 50px;
+  }
+
+  .experience-education article {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .projects div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .prj-pic {
+    flex-grow: 1;
+    /* vh vw는 반응형에 대응하는 장점이 있지만 flex-grow에 적용이 안됨 */
+  }
+
+  .prj-pic img {
+    flex-grow: 1;
+    /* vh vw는 반응형에 대응하는 장점이 있지만 flex-grow에 적용이 안됨 */
+  }
+  .testimonials-part {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .testimonials-part img {
+    order: 1;
+  }
+
+  .testimonials-part p {
+    order: 2;
+  }
+
+  .profile-footer-call-email-follow {
+    display: flex;
+    flex-direction: column;
+  }
 }
