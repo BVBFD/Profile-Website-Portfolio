@@ -626,6 +626,13 @@ h1 span {
 @media screen and (max-width: 768px) {
   .bars-toggle-btn {
     display: block;
+    background-color: var(--color-white);
+    color: var(--color-yellow);
+  }
+
+  .bars-toggle-btn-change-bgColor {
+    background-color: var(--color-yellow);
+    color: var(--color-white);
   }
 
   .nav-bar_logo span {
