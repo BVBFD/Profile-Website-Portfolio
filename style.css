@@ -36,6 +36,7 @@
 
   /* animation */
   --animation-duration: 300ms;
+  --animation-short-duration: 100ms;
 }
 
 /* universal tags */
@@ -641,17 +642,23 @@ h1 span {
 
   .nav-bar_contents {
     display: none;
-  }
-
-  .nav-bar_contents.open {
     flex-direction: column;
     text-align: center;
+    color: var(--color-yellow);
     width: 100%;
-    display: flex;
-    background-color: var(--color-yellow);
+    background-color: var(--color-white);
     position: absolute;
+    left: 0;
     top: 70px;
-    /* 여기에서도 vh vw를 쓰면 이상해짐. */
+  }
+
+  .change_color {
+    background-color: var(--color-yellow);
+    color: var(--color-white);
+  }
+
+  .open {
+    display: flex;
   }
 
   .about-me {
