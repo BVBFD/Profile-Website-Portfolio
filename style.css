@@ -126,11 +126,17 @@ p {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--color-yellow);
-  color: var(--color-white);
+  background-color: transparent;
+  color: var(--color-yellow);
   font-size: var(--font-regular);
   font-weight: var(--weight-bold);
   z-index: 999;
+  padding: 0 25px;
+}
+
+.nav-bar-color-bgcolor {
+  color: var(--color-white);
+  background-color: var(--color-yellow);
 }
 
 .nav-bar_logo {
@@ -139,12 +145,27 @@ p {
   align-items: center;
 }
 
-.nav-bar_logo img {
+.origin-logo {
   width: 60px;
   height: 60px;
   border-radius: 0;
   background-color: transparent;
   margin: 5px;
+  display: block;
+}
+
+.changed-logo {
+  display: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 0;
+  margin: 5px;
+  position: absolute;
+  left: 25px;
+}
+
+.logo-show-up {
+  display: block;
 }
 
 .nav-bar_contents span {
@@ -623,6 +644,7 @@ h1 span {
     background-color: var(--color-yellow);
     position: absolute;
     top: 70px;
+    /* 여기에서도 vh vw를 쓰면 이상해짐. */
   }
 
   .about-me {
