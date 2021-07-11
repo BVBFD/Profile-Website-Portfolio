@@ -24,10 +24,10 @@
         </div>
 
         <div class="nav-bar_contents">
-            <span>About me</span>
-            <span>Resume</span>
-            <span>Projects</span>
-            <span>Testimonials</span>
+            <span data-filter=".about-me">About me</span>
+            <span data-filter=".resume">Resume</span>
+            <span data-filter=".projects">Projects</span>
+            <span data-filter=".testimonials">Testimonials</span>
         </div>
 
         <button class="bars-toggle-btn">
@@ -57,9 +57,9 @@
                 <span class="about-me_profile_part2_header">About Me</span>
                 <span class="about-me_profile_part2_job">Software Developer</span>
                 <div class="about-me_profile_part2_href">
-                    <button>Resume</button>
-                    <button>Projects</button>
-                    <button>Testimonials</button>
+                    <button data-filter=".resume">Resume</button>
+                    <button data-filter=".projects">Projects</button>
+                    <button data-filter=".testimonials">Testimonials</button>
                 </div>
                 <p class="about-me_profile_part2_cnt1"> I have have been studying and working in the front-end field for 2 years.
                     And, I developed the apps educating Korean for foreigners with Korean, Vietnamese and English.
@@ -267,18 +267,24 @@
             <span>Projects</span>
         </h1>
 
-        <div>
-            <button class="projects_btn">All<span>9</span></button>
-            <button class="projects_btn">Front-End<span>4</span></button>
-            <button class="projects_btn">Back-End<span>3</span></button>
-            <button class="projects_btn">Mobile<span>2</span></button>
+        <div class="projects_btn-part">
+            <button class="projects_btn selected" data-filter="all">All<span>9</span></button>
+            <button class="projects_btn" data-filter="front-end">Front-End<span>4</span></button>
+            <button class="projects_btn" data-filter="back-end">Back-End<span>3</span></button>
+            <button class="projects_btn" data-filter="mobile">Mobile<span>2</span></button>
         </div>
 
-        <div>
-            <a href="" class="prj-pic"><img src="images/projects/kokoatalk/kakotalk_more_iphone.png"></a>
-            <a href="" class="prj-pic"><img src="images/projects/project1.png"></a>
-            <a href="" class="prj-pic"><img src="images/projects/project3.png"></a>
-            <a href="" class="prj-pic"><img  src="images/projects/project6.png"></a>
+        <div class="prj-pic-part">
+            <a href="" class="prj-pic" data-type="mobile"><img src="images/projects/kokoatalk/kakotalk_more_iphone.png"></a>
+            <a href="" class="prj-pic" data-type="front-end"><img src="images/projects/project1.png"></a>
+            <a href="" class="prj-pic" data-type="back-end"><img src="images/projects/project3.png"></a>
+            <a href="" class="prj-pic" data-type="front-end"><img src="images/projects/project6.png"></a>
+            <a href="" class="prj-pic" data-type="mobile"><img src="images/projects/project2.png"></a>
+            <a href="" class="prj-pic" data-type="front-end"><img src="images/projects/project4.png"></a>
+            <a href="" class="prj-pic" data-type="mobile"><img src="images/projects/project5.png"></a>
+            <a href="" class="prj-pic" data-type="mobile"><img src="images/projects/project7.png"></a>
+            <a href="" class="prj-pic" data-type="back-end"><img src="images/projects/project8.png"></a>
+            <a href="" class="prj-pic" data-type="mobile"><img src="images/projects/project7.png"></a>
         </div>
     </section>
 

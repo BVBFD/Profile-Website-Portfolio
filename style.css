@@ -505,6 +505,7 @@ h1 span {
   display: flex;
   justify-content: center;
   margin-bottom: 5vh;
+  flex-wrap: wrap;
 }
 
 .projects_btn {
@@ -541,6 +542,15 @@ h1 span {
 .prj-pic img {
   width: 230px;
   height: 200px;
+}
+
+.prj-pic-remove {
+  display: none;
+}
+
+.selected {
+  background-color: var(--color-yellow);
+  color: var(--color-white);
 }
 
 /* testimonials part */
