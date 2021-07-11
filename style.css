@@ -517,14 +517,14 @@ h1 span {
 }
 
 .projects_btn span {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
   color: var(--color-white);
   background-color: var(--color-orange);
   font-size: var(--font-small);
   display: inline-block;
-  line-height: 20px;
+  line-height: 22px;
   margin: 0 5px;
 }
 
@@ -551,6 +551,12 @@ h1 span {
 .selected {
   background-color: var(--color-yellow);
   color: var(--color-white);
+}
+
+.anim-out {
+  opacity: 0;
+  transform: translateY(50px) scale(0.94);
+  transition: all var(--animation-duration) ease-in;
 }
 
 /* testimonials part */

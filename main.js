@@ -131,8 +131,6 @@ about_me_profile_part2_href.addEventListener('click', (event) => {
 const projects_btn_part = document.querySelector(".projects_btn-part");
 const prj_pic_part = document.querySelectorAll(".prj-pic");
 projects_btn_part.addEventListener('click', (event) => {
-    const filter = event.target.parentNode.dataset.filter || event.target.dataset.filter;
-    
     // # when clicking on the button of the projects part,
     // the button will be background-yellow-colored.
     const active = document.querySelector(".projects_btn.selected");
@@ -142,13 +140,19 @@ projects_btn_part.addEventListener('click', (event) => {
     // BUTTON 이라고 대문자 써야함!! note 주의 클릭된 버튼 배경색 지정.
     target.classList.add("selected");
 
+    const filter = event.target.parentNode.dataset.filter || event.target.dataset.filter;
+    const prj_pic_container = document.querySelector('.prj-pic-container');
     prj_pic_part.forEach((value) => {
-        if(filter != value.dataset.type && filter != "all"){
-            value.classList.add('prj-pic-remove');
-        }
-        // 이거 헷갈림 진짜 잘 생각해야함!!
-        else{
-            value.classList.remove('prj-pic-remove');
-        }
+        prj_pic_container.classList.add('anim-out');
+        setTimeout(() => {
+            if(filter != value.dataset.type && filter != "all"){
+                value.classList.add('prj-pic-remove');
+            }
+            // 이거 헷갈림 진짜 잘 생각해야함!!
+            else{
+                value.classList.remove('prj-pic-remove');
+            }
+            prj_pic_container.classList.remove('anim-out');
+        }, 300);
     });
 });
