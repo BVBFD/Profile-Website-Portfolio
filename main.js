@@ -31,6 +31,14 @@ barsToggleBtn.addEventListener('click', () => {
     // on and off 구현할 때 유용함! 
 });
 
+// # after clicking on toggle in small size screen, open bar will be automatically closed.
+nav_bar_contents.addEventListener('click', (event) => {
+    const target = event.target.parentNode;
+    if(target == nav_bar_contents){
+        nav_bar_contents.classList.remove('open');
+    }
+});
+
 // # when scrolling down, about me part goes into opacity small effect
 const about_me = document.querySelector(".about-me");
 const about_me_span = about_me.querySelectorAll("span");
@@ -42,24 +50,24 @@ const about_me_smallBar = about_me.querySelector(".about-me_profile_part1_conten
 
 document.addEventListener('scroll', () => {
     about_me_p.forEach((value) => {
-        value.style.opacity = 1 - (window.scrollY / navbarHeight / 5);
+        value.style.opacity = 1 - (window.scrollY / navbarHeight / 18);
     })
 
     about_me_span.forEach((value) => {
-        value.style.opacity = 1 - (window.scrollY / navbarHeight / 5);
+        value.style.opacity = 1 - (window.scrollY / navbarHeight / 18);
     })
 
     about_me_button.forEach((value) => {
-        value.style.opacity = 1 - (window.scrollY / navbarHeight / 5);
+        value.style.opacity = 1 - (window.scrollY / navbarHeight / 18);
     })
 
     about_me_a.forEach((value) => {
-        value.style.opacity = 1 - (window.scrollY / navbarHeight / 5);
+        value.style.opacity = 1 - (window.scrollY / navbarHeight / 18);
     })
 
-    about_me_img.style.opacity = 1 - (window.scrollY / navbarHeight / 5);
+    about_me_img.style.opacity = 1 - (window.scrollY / navbarHeight / 18);
 
-    about_me_smallBar.style.opacity = 1 - (window.scrollY / navbarHeight / 5);
+    about_me_smallBar.style.opacity = 1 - (window.scrollY / navbarHeight / 18);
 });
 
 // querySelectorAll 선택되어진 전체 값이 배열형태로 리턴 된다. 그래서 forEach 구문을
