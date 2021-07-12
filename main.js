@@ -164,3 +164,22 @@ projects_btn_part.addEventListener('click', (event) => {
         }, 300);
     });
 });
+
+// # when clicking on the arrow-up button, it will move to the top automatically.
+const arrow_up = document.querySelector('.arrow-up');
+const aboutMeHeight = document.querySelector('.about-me').getBoundingClientRect().height;
+
+arrow_up.addEventListener('click', () => {
+    const scrollToAboutMe = document.querySelector('.about-me');
+    scrollToAboutMe.scrollIntoView({behavior: "smooth", block: "end"});
+});
+
+document.addEventListener('scroll', () => {
+    // 스크롤 이벤트 적용할때 document 다 arrow_up 이 아니라 
+    // 진짜 주의 ㅠㅠ
+    if(window.scrollY > aboutMeHeight / 2){
+        arrow_up.classList.add('appear');
+    }else{
+        arrow_up.classList.remove('appear');
+    }
+});

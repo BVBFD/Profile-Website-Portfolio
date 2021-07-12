@@ -147,6 +147,42 @@ p {
   /* inline-block으로 block 단위 태그로 변환해주면 보기 좋아짐 */
 }
 
+/* Initial-Open-Screen */
+.Initial-Open-Screen {
+  position: absolute;
+  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
+  /* 포지션 absolute는 원래 소속되어 있는 박스를 벗어나기 때문에 */
+  /* z-index를 통해서 우선 보여지는 것을 absolute로 지정된 것끼리 */
+  /* 우선순위 정해질 수 있음 */
+  animation: InitialOpenScreen 1s ease-in-out forwards;
+  /* fowards는 애니메이션 마지막 단계를 유지 */
+}
+
+.Initial-Open-Screen-Logo {
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+@keyframes InitialOpenScreen {
+  from {
+    visibility: visible;
+    opacity: 1;
+  }
+  to {
+    visibility: hidden;
+    opacity: 0;
+  }
+  /* 만약 opacity 혼자 쓴다면 visibility로 가려지지 않았기 떄문에 */
+  /* 본문의 버튼이 클릭이 안됨 */
+  /* 그래서 둘다 같이 써줘야 함 */
+}
 /* nav-bar: header */
 .nav-bar {
   position: sticky;
@@ -668,6 +704,28 @@ h1 span {
   margin-top: 5px;
 }
 
+/* arrow-up mark */
+.arrow-up {
+  display: none;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  font-size: 50px;
+  border-radius: 50%;
+  color: var(--color-white);
+  background-color: var(--color-yellow);
+  cursor: pointer;
+}
+
+.appear {
+  display: flex;
+}
+
+/* Responsive Screen */
 @media screen and (max-width: 768px) {
   .bars-toggle-btn {
     display: block;
