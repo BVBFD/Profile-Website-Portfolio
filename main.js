@@ -40,6 +40,7 @@ nav_bar_contents.addEventListener('click', (event) => {
 });
 
 // # when scrolling down, about me part goes into opacity small effect
+const body = document.querySelector('body');
 const about_me = document.querySelector(".about-me");
 const about_me_span = about_me.querySelectorAll("span");
 const about_me_p = about_me.querySelectorAll("p");
@@ -49,26 +50,99 @@ const about_me_img = about_me.querySelector("img");
 const about_me_smallBar = about_me.querySelector(".about-me_profile_part1_content1_smallBar");
 
 document.addEventListener('scroll', () => {
-    about_me_p.forEach((value) => {
-        value.style.opacity = 1 - (window.scrollY / navbarHeight / 18);
-    })
+    const about_me_small_screen_width = body.getBoundingClientRect().width;
+    // 반응형에 따라 너비 구하는 방법. addEventListener 안에 추가 해줘야 함
+    // 위에서 선언하게 되면 제일 처음 켜진 화면 기준 너비로 고정되어 버림!!
+    console.log(about_me_small_screen_width);
+    if(about_me_small_screen_width > 768){
+        about_me_p.forEach((value) => {
+            value.style.opacity = 1 - (window.scrollY / navbarHeight / 5);
+        })
+    
+        about_me_span.forEach((value) => {
+            value.style.opacity = 1 - (window.scrollY / navbarHeight / 5);
+        })
+    
+        about_me_button.forEach((value) => {
+            value.style.opacity = 1 - (window.scrollY / navbarHeight / 5);
+        })
+    
+        about_me_a.forEach((value) => {
+            value.style.opacity = 1 - (window.scrollY / navbarHeight / 5);
+        })
+    
+        about_me_img.style.opacity = 1 - (window.scrollY / navbarHeight / 5);
+    
+        about_me_smallBar.style.opacity = 1 - (window.scrollY / navbarHeight / 5);
 
-    about_me_span.forEach((value) => {
-        value.style.opacity = 1 - (window.scrollY / navbarHeight / 18);
-    })
-
-    about_me_button.forEach((value) => {
-        value.style.opacity = 1 - (window.scrollY / navbarHeight / 18);
-    })
-
-    about_me_a.forEach((value) => {
-        value.style.opacity = 1 - (window.scrollY / navbarHeight / 18);
-    })
-
-    about_me_img.style.opacity = 1 - (window.scrollY / navbarHeight / 18);
-
-    about_me_smallBar.style.opacity = 1 - (window.scrollY / navbarHeight / 18);
+    }else{
+        about_me_p.forEach((value) => {
+            value.style.opacity = 1;
+        })
+    
+        about_me_span.forEach((value) => {
+            value.style.opacity = 1;
+        })
+    
+        about_me_button.forEach((value) => {
+            value.style.opacity = 1;
+        })
+    
+        about_me_a.forEach((value) => {
+            value.style.opacity = 1;
+        })
+    
+        about_me_img.style.opacity = 1;
+    
+        about_me_smallBar.style.opacity = 1;
+    }
 });
+
+// if(about_me.getBoundingClientRect.width > 768px){
+//     document.addEventListener('scroll', () => {
+//         about_me_p.forEach((value) => {
+//             value.style.opacity = 1 - (window.scrollY / navbarHeight / 18);
+//         })
+    
+//         about_me_span.forEach((value) => {
+//             value.style.opacity = 1 - (window.scrollY / navbarHeight / 18);
+//         })
+    
+//         about_me_button.forEach((value) => {
+//             value.style.opacity = 1 - (window.scrollY / navbarHeight / 18);
+//         })
+    
+//         about_me_a.forEach((value) => {
+//             value.style.opacity = 1 - (window.scrollY / navbarHeight / 18);
+//         })
+    
+//         about_me_img.style.opacity = 1 - (window.scrollY / navbarHeight / 18);
+    
+//         about_me_smallBar.style.opacity = 1 - (window.scrollY / navbarHeight / 18);
+//     });
+// }else{
+//     document.addEventListener('scroll', () => {
+//         about_me_p.forEach((value) => {
+//             value.style.opacity = 1 - (window.scrollY / navbarHeight / 25);
+//         })
+    
+//         about_me_span.forEach((value) => {
+//             value.style.opacity = 1 - (window.scrollY / navbarHeight / 25);
+//         })
+    
+//         about_me_button.forEach((value) => {
+//             value.style.opacity = 1 - (window.scrollY / navbarHeight / 25);
+//         })
+    
+//         about_me_a.forEach((value) => {
+//             value.style.opacity = 1 - (window.scrollY / navbarHeight / 25);
+//         })
+    
+//         about_me_img.style.opacity = 1 - (window.scrollY / navbarHeight / 25);
+    
+//         about_me_smallBar.style.opacity = 1 - (window.scrollY / navbarHeight / 25);
+//     });
+// };
 
 // querySelectorAll 선택되어진 전체 값이 배열형태로 리턴 된다. 그래서 forEach 구문을
 // 써서 효과를 구현해야 함!
@@ -177,7 +251,7 @@ arrow_up.addEventListener('click', () => {
 document.addEventListener('scroll', () => {
     // 스크롤 이벤트 적용할때 document 다 arrow_up 이 아니라 
     // 진짜 주의 ㅠㅠ
-    if(window.scrollY > aboutMeHeight / 2){
+    if(window.scrollY > aboutMeHeight){
         arrow_up.classList.add('appear');
     }else{
         arrow_up.classList.remove('appear');

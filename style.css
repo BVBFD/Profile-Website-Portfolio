@@ -85,7 +85,7 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 15vh 3vw;
+  padding: 5vh 3vw;
 }
 
 .experience-education article {
@@ -95,7 +95,9 @@ footer {
 
 .btn-effect {
   cursor: pointer;
-  padding: 10px;
+  padding: 3px;
+  /* 버튼 effect 패딩이 너무 많아도 안 좋음 */
+  /* 누르면 작동 안되는 곳이 생겨서 */
   border-radius: var(--size-border-radius);
 }
 
@@ -149,10 +151,12 @@ p {
 
 /* Initial-Open-Screen */
 .Initial-Open-Screen {
-  position: absolute;
+  position: fixed;
+  /* absolute라고 하면 x-overflow 이슈 발생함 주의! */
+  /* 왜냐하면 absolute 자체가 부모박스에서 벗어나는 역할을 하기 때문 */
   z-index: 9999;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   /* 포지션 absolute는 원래 소속되어 있는 박스를 벗어나기 때문에 */
   /* z-index를 통해서 우선 보여지는 것을 absolute로 지정된 것끼리 */
   /* 우선순위 정해질 수 있음 */
@@ -382,7 +386,7 @@ h1 span {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding-right: 25px;
+  padding: 0 15px;
 }
 
 .resume_skills_download button {
@@ -578,6 +582,7 @@ h1 span {
   border: 1px solid var(--color-dark-white);
   font-size: var(--font-regular);
   background-color: var(--color-white);
+  position: relative;
 }
 
 .projects_btn span {
@@ -590,6 +595,26 @@ h1 span {
   display: inline-block;
   line-height: 22px;
   margin: 0 5px;
+  position: absolute;
+  opacity: 0;
+  top: -15px;
+  transition: all var(--animation-duration) ease-in-out;
+}
+
+.projects_btn:hover {
+  background-color: var(--color-yellow);
+  color: var(--color-white);
+}
+
+.projects_btn:hover span {
+  top: 3px;
+  opacity: 1;
+}
+
+.projects_btn.selected:active,
+.selected:hover span {
+  top: 3px;
+  opacity: 1;
 }
 
 .prj-pic {
@@ -727,6 +752,15 @@ h1 span {
 
 /* Responsive Screen */
 @media screen and (max-width: 768px) {
+  :root {
+    /* Font size */
+    --font-large: 30px;
+    --font-medium: 20px;
+    --font-regular: 16px;
+    --font-small: 14px;
+    --font-micro: 12px;
+  }
+
   .bars-toggle-btn {
     display: block;
     background-color: var(--color-white);
@@ -802,6 +836,12 @@ h1 span {
     align-items: center;
   }
 
+  .projects_btn span {
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+  }
+
   .prj-pic {
     flex-grow: 1;
     /* vh vw는 반응형에 대응하는 장점이 있지만 flex-grow에 적용이 안됨 */
@@ -829,5 +869,14 @@ h1 span {
   .profile-footer-call-email-follow {
     display: flex;
     flex-direction: column;
+  }
+
+  .arrow-up {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 50%;
+    bottom: 16px;
+    right: 16px;
   }
 }
