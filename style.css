@@ -93,6 +93,34 @@ footer {
   flex-direction: row;
 }
 
+.btn-effect {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: var(--size-border-radius);
+}
+
+.btn-effect:hover {
+  background-color: var(--color-dark-orange);
+  transform: scale(1.2);
+  font-size: var(--font-medium);
+}
+
+.btn-effect:active {
+  background-color: var(--color-dark-orange);
+  transform: scale(0.8);
+  font-size: var(--font-small);
+}
+
+.btn-effect-logo:hover {
+  transform: scale(1.2);
+  color: var(--color-dark-orange);
+}
+
+.btn-effect-logo:active {
+  transform: scale(0.8);
+  color: var(--color-dark-orange);
+}
+
 /* typography */
 h1 {
   display: flex;
