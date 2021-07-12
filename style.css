@@ -156,7 +156,7 @@ p {
   /* 포지션 absolute는 원래 소속되어 있는 박스를 벗어나기 때문에 */
   /* z-index를 통해서 우선 보여지는 것을 absolute로 지정된 것끼리 */
   /* 우선순위 정해질 수 있음 */
-  animation: InitialOpenScreen 1s ease-in-out forwards;
+  animation: InitialOpenScreen 1.5s ease-in-out forwards;
   /* fowards는 애니메이션 마지막 단계를 유지 */
 }
 
