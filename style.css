@@ -93,6 +93,11 @@ footer {
   flex-direction: row;
 }
 
+.btn-progess-effect {
+  background-color: var(--color-dark-orange);
+  font-size: var(--font-medium);
+}
+
 .btn-effect {
   cursor: pointer;
   padding: 3px;
@@ -386,6 +391,17 @@ p {
   margin: 10px;
 }
 
+.about-me_profile_part2_cnt2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-me_profile_part2_cnt2 span {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px;
+}
+
 /* resume part */
 .resume {
   display: flex;
@@ -564,24 +580,47 @@ h1 span {
 /* experience and education part */
 .experience-education {
   display: flex;
+  width: 100%;
   flex-direction: column;
   background-color: var(--color-light-white);
   padding: 5vh 0;
+  /* div끼리 높이가 안 맞는 것은 부모, 자식 상자 간에 */
+  /* 너비, 높이 비율을 정확하게 해주어야 하며 똑같은 */
+  /* display 종류로 묶어준다.(이거는 나중에 생각해볼것..) */
 }
 
 .experience-part {
   display: flex;
+  width: 100%;
   flex-direction: row;
   justify-content: space-between;
   border: 1px solid var(--color-light-white);
-  margin: auto;
+  /* margin: auto; */
+  /* margin: auto 요소 중앙정렬하고 싶을 때 사용 */
+  /* 높이가 옆상자에 비해서 약간 모자란 이유  */
+  /* 지난번 flex-direction: column; aling-item: center 비슷한 이유 */
 }
 
 .experience-part div {
+  width: 50%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   background-color: var(--color-white);
   padding: 0 3vw;
+}
+
+.experience-part img {
+  display: flex;
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.experience-part p {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 /* projects */
@@ -679,9 +718,28 @@ h1 span {
 .testimonials-part p {
   background-color: var(--color-white);
   margin: 2vh;
-  padding: 2vh 2vw;
+  padding: 5vh 5vw;
   font-size: var(--font-small);
   font-weight: var(--weight-semi-bold);
+  position: relative;
+}
+
+.testimonials-part span:nth-child(even) {
+  font-size: var(--font-small);
+  font-weight: var(--weight-semi-bold);
+  color: var(--color-dark-pink);
+  position: absolute;
+  bottom: 1vh;
+  right: 1vw;
+}
+
+.testimonials-part span:nth-child(odd) {
+  font-size: var(--font-small);
+  font-weight: var(--weight-semi-bold);
+  color: var(--color-dark-pink);
+  position: absolute;
+  bottom: 1vh;
+  right: 1vw;
 }
 
 /* profile-footer part */

@@ -266,10 +266,44 @@ const viewPortHeight = window.innerHeight;
 
 const callback = () => {
     let colorRatio = (window.scrollY / (bodyHeight-viewPortHeight)) * 100;
-    console.log(colorRatio);
+    // console.log(colorRatio);
     progessingBar.style.width = `${colorRatio}%`;
 };
 window.addEventListener('scroll', callback);
 window.addEventListener('resize', callback);
 // 반응형으로 만들때 창의 크기가 달라지기 때문에 resize를 해서 다시 height 측정해서
 // 함수 돌려야 한다.
+
+// when scrolling down or up, the button will be CSS-effected.
+const sectionIds = [
+    '.about-me',
+    '.resume',
+    '.projects',
+    '.testimonials'
+];
+const sections = sectionIds.map(className => document.querySelector(className));
+const navbarBtn = sectionIds.map(className => document.querySelector(`[data-filter="${className}"]`));
+let index = 0;
+
+const optionInterOb = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.3
+}
+
+const callbackInterOb = (entries, observer) => {
+    entries.forEach(entry => {
+        // console.log(navbarBtn[index])
+        if(entry.isIntersecting){ 
+            navbarBtn[index].classList.remove("btn-progess-effect");  
+            let targetClass = entry.target.className; 
+            index = sectionIds.indexOf(`.${targetClass}`);
+            // index는 꼭 밖에 전역변수로 선언해줘야 그전 entry index에도 적용됨 주의!
+            // id 가지고 올때는 id 써도 되지만 class이름 가지고 올때는 className!!
+            // console.log(navbarBtn[index]);
+            navbarBtn[index].classList.add("btn-progess-effect");      
+        }
+    });
+};
+const observer = new IntersectionObserver(callbackInterOb, optionInterOb);
+sections.forEach(section => observer.observe(section));
