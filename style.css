@@ -248,6 +248,22 @@ p {
   color: var(--color-white);
 }
 
+/* progessing bar  */
+.progressing-bar {
+  z-index: 99999999;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  height: 8px;
+}
+
+.progressing-bar-colored {
+  width: 0;
+  height: 8px;
+  background-color: var(--color-dark-orange);
+}
+
 /* About me */
 /* background */
 .about-me {

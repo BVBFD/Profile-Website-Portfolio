@@ -53,7 +53,7 @@ document.addEventListener('scroll', () => {
     const about_me_small_screen_width = body.getBoundingClientRect().width;
     // 반응형에 따라 너비 구하는 방법. addEventListener 안에 추가 해줘야 함
     // 위에서 선언하게 되면 제일 처음 켜진 화면 기준 너비로 고정되어 버림!!
-    console.log(about_me_small_screen_width);
+    // console.log(about_me_small_screen_width);
     if(about_me_small_screen_width > 768){
         about_me_p.forEach((value) => {
             value.style.opacity = 1 - (window.scrollY / navbarHeight / 5);
@@ -257,3 +257,19 @@ document.addEventListener('scroll', () => {
         arrow_up.classList.remove('appear');
     }
 });
+
+// when scrolling down or up, the progessing bar will be moved and colored.
+const progessingBar = document.querySelector('.progressing-bar-colored');
+const bodyHeight = document.getElementsByTagName('body')[0].clientHeight; 
+const viewPortWidth = window.innerWidth;
+const viewPortHeight = window.innerHeight;
+
+const callback = () => {
+    let colorRatio = (window.scrollY / (bodyHeight-viewPortHeight)) * 100;
+    console.log(colorRatio);
+    progessingBar.style.width = `${colorRatio}%`;
+};
+window.addEventListener('scroll', callback);
+window.addEventListener('resize', callback);
+// 반응형으로 만들때 창의 크기가 달라지기 때문에 resize를 해서 다시 height 측정해서
+// 함수 돌려야 한다.
