@@ -1,4 +1,5 @@
 /* Global */
+
 :root {
   /* color */
   --color-white: #ffffff;
@@ -954,3 +955,40 @@ h1 span {
     right: 16px;
   }
 }
+
+/* 이 프로젝트 끝나고 BEM 네이밍 규칙 다시 공부해보기*/
+/* 1. B(Block)
+  기본적인 component를 나타낸다.
+  위에서 언급했 듯이 하이픈(-)을 사용하면 된다.
+
+  .stick-man {
+  }
+
+2. E(Elements)
+  요소(element)를 나타낸다.
+  component를 이루고 있는 구성요소를 표현할 때 사용한다.
+  component(B) 이름 뒤에 **2개의 밑줄(__)**을 사용하여 명명한다.
+
+  .stick-man__head {
+  }
+  .stick-man__arms {
+  }
+
+3. M(Modifier)
+  수정(Modifier)을 나타낸다.
+  위에서 나온 stick-man이 blue 또는 red를 가질 수 있다면??
+  component를 수정한다는 의미로, component명 뒤에 **하이픈 두개(--)**를 사용하여 명명한다.\
+
+  .stick-man__head--small {
+  }
+  .stick-man__head--big {
+  }
+
+4. js- 클래스 이름 사용
+  DOM element 와의 관계를 나타내기 위해 js-라는 이름을 사용하는 것이다.
+
+  <div class="site-navigation js-site-navigation">
+  </div>
+
+  //the JavaScript code
+  const nav = document.querySelector('.js-site-navigation') */
